@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Login - MYS</title>
+
+    <link rel="stylesheet" href="style.css">            <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        MYS <span>SYNDICATE</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="profiles.html">Directory</a>
+    </nav>
+
+</header>
+
+
+<main class="login-page">
+
+    <div class="login-card">
+
+        <div class="login-badge">
+            ADMIN PANEL
+        </div>
+
+        <h1>
+            Welcome Back
+        </h1>
+
+        <p class="login-subtitle">
+            Sign in to manage MYS Malaysia Syndicate.
+        </p>
+
+
+        <form id="loginForm">
+
+            <label>
+                Username
+            </label>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter username"
+                required
+            >
+
+
+            <label>
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+                required
+            >
+
+
+            <button
+                type="submit"
+                class="login-btn"
+            >
+                Sign In
+            </button>
+
+
+            <p
+                id="loginMessage"
+                class="login-message"
+            ></p>
+
+        </form>
+
+    </div>
+
+</main>
+
+
+<script src="login.js"></script>
+
+</body>
+</html>
