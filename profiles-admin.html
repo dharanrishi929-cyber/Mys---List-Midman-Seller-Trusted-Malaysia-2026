@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Manage Profiles - MYS</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <aside class="sidebar">
+
+        <div class="admin-logo">
+            MYS
+            <span>SYNDICATE</span>
+        </div>
+
+        <div class="admin-role">
+            ADMIN PANEL
+        </div>
+
+        <nav class="admin-nav">
+
+            <a href="admin.html">
+                Dashboard
+            </a>
+
+            <a href="profiles-admin.html"
+               class="active">
+                Profiles
+            </a>
+
+            <a href="#">
+                Reviews
+            </a>
+
+            <a href="#">
+                Audit Logs
+            </a>
+
+            <a href="#">
+                Admin Management
+            </a>
+
+            <a href="#">
+                Settings
+            </a>
+
+        </nav>
+
+        <button
+            class="logout-btn"
+            id="logoutBtn"
+        >
+            Logout
+        </button>
+
+    </aside>
+
+
+    <main class="admin-main">
+
+        <div class="admin-top">
+
+            <div>
+
+                <small>
+                    ADMIN PANEL
+                </small>
+
+                <h1>
+                    Manage Profiles
+                </h1>
+
+            </div>
+
+            <button
+                class="login-btn"
+                id="addProfileBtn"
+            >
+                + Add Profile
+            </button>
+
+        </div>
+<div
+    id="addProfileForm"
+    class="profile-form"
+    style="display: none;"
+>
+
+    <h2>
+        Add New Profile
+    </h2>
+
+    <input
+        type="text"
+        id="newUsername"
+        placeholder="Username"
+    >
+
+    <select id="newRole">
+
+        <option value="SELLER">
+            Seller
+        </option>
+
+        <option value="MIDMAN">
+            Midman
+        </option>
+
+    </select>
+
+    <input
+        type="text"
+        id="newWhatsapp"
+        placeholder="WhatsApp number"
+    >
+
+    <input
+        type="text"
+        id="newTrust"
+        placeholder="Trust status"
+        value="Trusted"
+    >
+
+    <textarea
+        id="newDescription"
+        placeholder="Description"
+    ></textarea>
+
+    <label>
+        <input
+            type="checkbox"
+            id="newVerified"
+        >
+        Verified
+    </label>
+
+    <label>
+        <input
+            type="checkbox"
+            id="newFeatured"
+        >
+        Featured
+    </label>
+
+    <div class="form-actions">
+
+        <button
+            id="saveProfileBtn"
+        >
+            Save Profile
+        </button>
+
+        <button
+            id="cancelProfileBtn"
+            type="button"
+        >
+            Cancel
+        </button>
+
+    </div>
+
+</div>
+
+        <div
+            id="profilesAdminGrid"
+            class="admin-profile-grid"
+        >
+
+            <p class="loading">
+                Loading profiles...
+            </p>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+</script>
+
+<script src="supabase.js"></script>
+
+<script src="profiles-admin.js"></script>
+
+</body>
+
+</html>
