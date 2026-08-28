@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard - MYS</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="admin-logo">
+            MYS
+            <span>SYNDICATE</span>
+        </div>
+
+        <div class="admin-role">
+            SUPER ADMIN
+        </div>
+
+
+        <nav class="admin-nav">
+
+            <a
+                href="admin.html"
+                class="active"
+            >
+                Dashboard
+            </a>
+
+            <a href="profiles-admin.html">
+                Profiles
+            </a>
+
+            <a href="#">
+                Reviews
+            </a>
+
+            <a href="#">
+                Audit Logs
+            </a>
+
+            <a href="#">
+                Admin Management
+            </a>
+
+            <a href="#">
+                Settings
+            </a>
+
+        </nav>
+
+
+        <button
+            class="logout-btn"
+            id="logoutBtn"
+        >
+            Logout
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="admin-main">
+
+        <div class="admin-top">
+
+            <div>
+
+                <small>
+                    ADMIN PANEL
+                </small>
+
+                <h1>
+                    Dashboard
+                </h1>
+
+            </div>
+
+            <div
+                class="admin-user"
+                id="adminUsername"
+            >
+                Loading...
+            </div>
+
+        </div>
+
+
+        <!-- STATS -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <span>
+                    Total Profiles
+                </span>
+
+                <strong id="totalProfiles">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    Verified
+                </span>
+
+                <strong id="totalVerified">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    Reviews
+                </span>
+
+                <strong id="totalReviews">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    Admins
+                </span>
+
+                <strong id="totalAdmins">
+                    -
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <section class="admin-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <small>
+                        MANAGEMENT
+                    </small>
+
+                    <h2>
+                        Quick Actions
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <a
+                    href="profiles-admin.html"
+                    class="stat-card"
+                >
+
+                    <span>
+                        Manage
+                    </span>
+
+                    <strong>
+                        Profiles →
+                    </strong>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="stat-card"
+                >
+
+                    <span>
+                        Manage
+                    </span>
+
+                    <strong>
+                        Reviews →
+                    </strong>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="stat-card"
+                >
+
+                    <span>
+                        View
+                    </span>
+
+                    <strong>
+                        Audit Logs →
+                    </strong>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECENT ACTIVITY -->
+
+        <section class="admin-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <small>
+                        SYSTEM
+                    </small>
+
+                    <h2>
+                        Recent Admin Activity
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="activity-list"
+                id="activityList"
+            >
+
+                <div class="activity">
+
+                    <div>
+
+                        <strong>
+                            System
+                        </strong>
+
+                        <p>
+                            Loading recent activity...
+                        </p>
+
+                    </div>
+
+                    <span>
+                        —
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase.js"></script>
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>
