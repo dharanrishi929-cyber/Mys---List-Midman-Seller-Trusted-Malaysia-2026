@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        MYS Malaysia Syndicate - Directory
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <a
+        href="index.html"
+        class="logo"
+    >
+        MYS <span>Malaysia Syndicate</span>
+    </a>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="profiles.html">
+            Directory
+        </a>
+
+        <a href="login.html">
+            Admin
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="directory">
+
+
+    <div class="section-title">
+
+        <small>
+            MYS MALAYSIA SYNDICATE
+        </small>
+
+        <h1>
+            Trusted Directory
+        </h1>
+
+    </div>
+
+
+
+    <div class="filters">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search username..."
+        >
+
+
+        <select id="roleFilter">
+
+            <option value="all">
+                All
+            </option>
+
+            <option value="Seller">
+                Seller
+            </option>
+
+            <option value="Midman">
+                Midman
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <div id="directoryGrid">
+
+        <div class="empty">
+            Loading profiles...
+        </div>
+
+    </div>
+
+
+</main>
+
+
+
+<footer>
+
+    MYS Malaysia Syndicate
+
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase.js"></script>
+
+<script src="directory.js"></script>
+
+
+</body>
+
+</html>
