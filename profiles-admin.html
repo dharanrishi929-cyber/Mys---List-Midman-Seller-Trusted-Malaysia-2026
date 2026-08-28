@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -11,24 +12,39 @@
 
     <title>Manage Profiles - MYS</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
+
 <body>
 
+
 <div class="admin-layout">
+
+
+    <!-- SIDEBAR -->
 
     <aside class="sidebar">
 
         <div class="admin-logo">
+
             MYS
-            <span>SYNDICATE</span>
+
+            <span>
+                SYNDICATE
+            </span>
+
         </div>
+
 
         <div class="admin-role">
             ADMIN PANEL
         </div>
+
 
         <nav class="admin-nav">
 
@@ -36,8 +52,10 @@
                 Dashboard
             </a>
 
-            <a href="profiles-admin.html"
-               class="active">
+            <a
+                href="profiles-admin.html"
+                class="active"
+            >
                 Profiles
             </a>
 
@@ -59,6 +77,7 @@
 
         </nav>
 
+
         <button
             class="logout-btn"
             id="logoutBtn"
@@ -69,7 +88,11 @@
     </aside>
 
 
+
+    <!-- MAIN -->
+
     <main class="admin-main">
+
 
         <div class="admin-top">
 
@@ -85,6 +108,7 @@
 
             </div>
 
+
             <button
                 class="login-btn"
                 id="addProfileBtn"
@@ -93,86 +117,182 @@
             </button>
 
         </div>
-<div
-    id="addProfileForm"
-    class="profile-form"
-    style="display: none;"
->
 
-    <h2>
-        Add New Profile
-    </h2>
 
-    <input
-        type="text"
-        id="newUsername"
-        placeholder="Username"
-    >
 
-    <select id="newRole">
+        <!-- ADD PROFILE FORM -->
 
-        <option value="SELLER">
-            Seller
-        </option>
-
-        <option value="MIDMAN">
-            Midman
-        </option>
-
-    </select>
-
-    <input
-        type="text"
-        id="newWhatsapp"
-        placeholder="WhatsApp number"
-    >
-
-    <input
-        type="text"
-        id="newTrust"
-        placeholder="Trust status"
-        value="Trusted"
-    >
-
-    <textarea
-        id="newDescription"
-        placeholder="Description"
-    ></textarea>
-
-    <label>
-        <input
-            type="checkbox"
-            id="newVerified"
+        <div
+            id="addProfileForm"
+            class="profile-form"
+            style="display: none;"
         >
-        Verified
-    </label>
 
-    <label>
-        <input
-            type="checkbox"
-            id="newFeatured"
-        >
-        Featured
-    </label>
 
-    <div class="form-actions">
+            <h2>
+                Add New Profile
+            </h2>
 
-        <button
-            id="saveProfileBtn"
-        >
-            Save Profile
-        </button>
 
-        <button
-            id="cancelProfileBtn"
-            type="button"
-        >
-            Cancel
-        </button>
 
-    </div>
+            <!-- PROFILE IMAGE -->
 
-</div>
+            <label
+                for="newProfileImage"
+            >
+                Profile Image
+            </label>
+
+
+            <input
+                type="file"
+                id="newProfileImage"
+                accept="image/*"
+            >
+
+
+            <!-- IMAGE PREVIEW -->
+
+            <div
+                id="profileImagePreview"
+                style="
+                    display:none;
+                    margin-top:15px;
+                    text-align:center;
+                "
+            >
+
+                <img
+                    id="previewImage"
+                    src=""
+                    alt="Profile Preview"
+                    style="
+                        width:100px;
+                        height:100px;
+                        object-fit:cover;
+                        border-radius:50%;
+                        border:2px solid rgba(77,163,255,0.5);
+                    "
+                >
+
+            </div>
+
+
+
+            <!-- USERNAME -->
+
+            <input
+                type="text"
+                id="newUsername"
+                placeholder="Username"
+            >
+
+
+
+            <!-- ROLE -->
+
+            <select id="newRole">
+
+                <option value="SELLER">
+                    Seller
+                </option>
+
+                <option value="MIDMAN">
+                    Midman
+                </option>
+
+            </select>
+
+
+
+            <!-- WHATSAPP -->
+
+            <input
+                type="text"
+                id="newWhatsapp"
+                placeholder="WhatsApp number"
+            >
+
+
+
+            <!-- TRUST -->
+
+            <input
+                type="text"
+                id="newTrust"
+                placeholder="Trust status"
+                value="Trusted"
+            >
+
+
+
+            <!-- DESCRIPTION -->
+
+            <textarea
+                id="newDescription"
+                placeholder="Description"
+            ></textarea>
+
+
+
+            <!-- VERIFIED -->
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    id="newVerified"
+                >
+
+                Verified
+
+            </label>
+
+
+
+            <!-- FEATURED -->
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    id="newFeatured"
+                >
+
+                Featured
+
+            </label>
+
+
+
+            <!-- ACTIONS -->
+
+            <div class="form-actions">
+
+
+                <button
+                    id="saveProfileBtn"
+                >
+                    Save Profile
+                </button>
+
+
+                <button
+                    id="cancelProfileBtn"
+                    type="button"
+                >
+                    Cancel
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- PROFILES -->
 
         <div
             id="profilesAdminGrid"
@@ -185,18 +305,108 @@
 
         </div>
 
+
     </main>
+
 
 </div>
 
 
-<script
-    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
 </script>
 
 <script src="supabase.js"></script>
 
 <script src="profiles-admin.js"></script>
+
+
+<script>
+
+    /*
+     * IMAGE PREVIEW ONLY
+     * Upload functionality akan dibuat
+     * dalam profiles-admin.js selepas ini.
+     */
+
+    const imageInput =
+        document.getElementById(
+            "newProfileImage"
+        );
+
+    const previewBox =
+        document.getElementById(
+            "profileImagePreview"
+        );
+
+    const previewImage =
+        document.getElementById(
+            "previewImage"
+        );
+
+
+    if (imageInput) {
+
+        imageInput.addEventListener(
+            "change",
+            function () {
+
+                const file =
+                    this.files[0];
+
+
+                if (!file) {
+
+                    previewBox.style.display =
+                        "none";
+
+                    previewImage.src =
+                        "";
+
+                    return;
+                }
+
+
+                if (!file.type.startsWith("image/")) {
+
+                    alert(
+                        "Please select an image file."
+                    );
+
+                    this.value =
+                        "";
+
+                    return;
+                }
+
+
+                const reader =
+                    new FileReader();
+
+
+                reader.onload =
+                    function (event) {
+
+                        previewImage.src =
+                            event.target.result;
+
+                        previewBox.style.display =
+                            "block";
+
+                    };
+
+
+                reader.readAsDataURL(file);
+
+            }
+        );
+
+    }
+
+</script>
+
 
 </body>
 
